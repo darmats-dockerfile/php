@@ -16,7 +16,9 @@ RUN set -ex \
     && chmod +x /entrypoint.sh
 
 ENTRYPOINT ["/entrypoint.sh"]
-WORKDIR /var/www/html
+
+RUN set -ex \
+    && cp /usr/local/etc/php/php.ini-development /usr/local/etc/php/php.ini
 
 RUN set -ex \
     && usermod -u 1000 www-data

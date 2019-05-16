@@ -35,6 +35,3 @@ alias lh='ls -lha --color=auto'\n\
 alias mv='mv -i'\n\
 alias rm='rm -i'\n\
 " >> /root/.bashrc
-
-RUN set -ex \
-    && cp /usr/local/etc/php/php.ini-development /usr/local/etc/php/php.ini
