@@ -8,7 +8,7 @@ RUN set -ex \
     && rm -rf /var/cache/apt/archives/* /var/lib/apt/lists/*
 
 RUN set -ex \
-    && docker-php-ext-install zip pdo_mysql
+    && docker-php-ext-install zip pdo_mysql opcache
 
 RUN set -ex \
     && a2enmod rewrite
