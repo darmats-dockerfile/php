@@ -11,7 +11,7 @@ RUN set -ex \
     && docker-php-ext-install zip pdo_mysql opcache
 
 RUN set -ex \
-    && a2enmod rewrite
+    && a2enmod rewrite && a2enmod headers
 
 COPY install_composer.sh /tmp/
 
