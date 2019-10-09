@@ -3,12 +3,14 @@ FROM php:7.3-apache
 
 RUN set -ex \
     && apt-get update \
-    && apt-get install -y --no-install-recommends wget git ${PHPIZE_DEPS} libzip-dev \
+    && apt-get install -y --no-install-recommends wget git ${PHPIZE_DEPS} \
+        libzip-dev \
+        libpng-dev \
     && apt-get clean \
     && rm -rf /var/cache/apt/archives/* /var/lib/apt/lists/*
 
 RUN set -ex \
-    && docker-php-ext-install zip pdo_mysql opcache
+    && docker-php-ext-install zip pdo_mysql opcache gd
 
 RUN set -ex \
     && a2enmod rewrite

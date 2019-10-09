@@ -7,7 +7,7 @@ services:
   7.3-apache-dev:
     build:
       context: 7.3/apache-dev
-    image: darmats/php:7.3-apache-dev
+    image: darmats/php:7.3-apache-gd-dev
     # volumes:
     #   - .:/src
     # environment:
